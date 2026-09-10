@@ -1,0 +1,55 @@
+<div
+  class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6 lg:h-20 lg:px-8"
+  style="padding-top: env(safe-area-inset-top, 0px)"
+>
+  <a
+    href="#top"
+    class="flex min-w-0 items-center gap-2.5 rounded-xl transition-opacity hover:opacity-80"
+  >
+    <app-brand-mark [initials]="profile.initials" />
+    <span class="flex min-w-0 flex-col">
+      <span class="flex items-baseline gap-1.5">
+        <span class="truncate text-title text-on-surface">{{ profile.name }}</span>
+        <span class="text-label-sm text-primary">{{ profile.handle }}</span>
+      </span>
+      <span class="truncate text-label-sm uppercase text-on-surface-variant">{{
+        profile.role
+      }}</span>
+    </span>
+  </a>
+
+  <!-- Desktop navigation; the bottom bar takes over below md. -->
+  <nav class="hidden md:block" aria-label="Sections">
+    <ul class="flex items-center gap-1">
+      @for (item of navItems; track item.fragment) {
+        <li>
+          <a
+            [href]="'#' + item.fragment"
+            [attr.aria-current]="active() === item.fragment ? 'true' : null"
+            class="flex min-h-11 items-center rounded-full px-3.5 text-label text-on-surface-variant transition-colors hover:bg-surface-container hover:text-on-surface aria-[current]:bg-primary-fixed/60 aria-[current]:text-on-primary-fixed"
+          >
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+
+  <div class="flex shrink-0 items-center gap-2">
+    @if (profile.available) {
+      <app-availability-pill class="hidden sm:inline-flex" />
+    }
+    <a
+      href="#contact"
+      class="hidden min-h-11 items-center rounded-full bg-primary px-4 text-label text-on-primary shadow-card transition-transform hover:bg-primary-container active:scale-[0.98] md:inline-flex"
+    >
+      Hire me
+    </a>
+    <span
+      class="grid size-9 place-items-center rounded-full bg-primary-fixed text-label-sm text-on-primary-fixed md:hidden"
+      aria-hidden="true"
+    >
+      {{ profile.initials }}
+    </span>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<section
+  class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-5 shadow-card sm:p-8 lg:p-10"
+  aria-labelledby="hero-title"
+>
+  <!-- Ambient tint. Decorative and non-interactive. -->
+  <div
+    class="pointer-events-none absolute -right-16 -top-16 size-56 rounded-full bg-primary/10 blur-3xl"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="pointer-events-none absolute -bottom-20 -left-16 size-48 rounded-full bg-secondary-fixed/50 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative flex items-center justify-between gap-3">
+    <span
+      class="inline-flex items-center gap-1.5 rounded-full bg-surface-container px-2.5 py-1 text-label-sm uppercase text-on-surface-variant"
+    >
+      <span class="size-1.5 animate-pulse rounded-full bg-primary" aria-hidden="true"></span>
+      {{ profile.role }}
+    </span>
+    <span class="font-mono text-label-sm text-on-surface-variant">{{ profile.version }}</span>
+  </div>
+
+  <h1 id="hero-title" class="relative mt-5 text-headline text-on-surface sm:text-display">
+    {{ profile.greeting }}
+    <span class="inline-block motion-safe:animate-pulse" aria-hidden="true">👋</span>
+  </h1>
+
+  <p class="relative mt-3 max-w-2xl text-body text-on-surface-variant sm:text-body-lg">
+    {{ profile.summary }}
+  </p>
+
+  <div class="relative mt-6 flex flex-wrap items-center gap-2">
+    <a
+      href="#contact"
+      class="inline-flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-xl bg-primary px-5 text-title text-on-primary shadow-card transition-[background-color,transform] hover:bg-primary-container active:scale-[0.98] sm:flex-none"
+    >
+      Get in touch
+      <app-icon name="arrow-right" class="text-[18px]" />
+    </a>
+    <a
+      [href]="profile.resumeUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-surface-container px-4 text-label text-on-surface transition-[background-color,transform] hover:bg-surface-container-high active:scale-[0.98]"
+    >
+      <app-icon name="code" class="text-[18px]" />
+      CV / Git
+      <span class="sr-only">(opens in a new tab)</span>
+    </a>
+  </div>
+</section>

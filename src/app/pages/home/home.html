@@ -1,0 +1,25 @@
+<div
+  class="mx-auto flex max-w-6xl flex-col gap-4 px-4 pb-28 pt-20 sm:gap-6 sm:px-6 lg:px-8 lg:pb-16 lg:pt-28"
+>
+  <section id="featured-work" class="grid scroll-mt-24 gap-4 sm:gap-6 lg:grid-cols-3">
+    <app-hero-card class="lg:col-span-2" />
+    <app-metrics-strip />
+  </section>
+
+  <app-section-heading icon="dashboard" title="Selected works" meta="Index 2024" class="mt-2" />
+
+  <div id="projects" class="grid scroll-mt-24 grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-3">
+    @for (project of projects; track project.id) {
+      <app-project-card [project]="project" class="lg:col-span-2 lg:row-span-2" />
+    }
+
+    <app-obsessions-card />
+    <app-availability-card class="scroll-mt-24" />
+
+    <div id="lab" class="scroll-mt-24 lg:col-span-3">
+      <app-lab-card />
+    </div>
+  </div>
+
+  <app-commit-stream class="mt-2" />
+</div>

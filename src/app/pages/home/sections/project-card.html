@@ -1,0 +1,66 @@
+@let item = project();
+
+<article
+  class="group flex h-full flex-col overflow-hidden rounded-2xl bg-surface-container-lowest shadow-card"
+  [attr.aria-labelledby]="'project-' + item.id"
+>
+  <!-- Fixed aspect box: reserves space before the image loads, so nothing shifts. -->
+  <div class="relative aspect-[5/3] w-full overflow-hidden bg-surface-container-high">
+    <img
+      [ngSrc]="item.image"
+      [alt]="item.imageAlt"
+      fill
+      sizes="(min-width: 1024px) 640px, 100vw"
+      class="object-cover object-top transition-transform duration-500 motion-safe:group-hover:scale-105"
+    />
+    <span
+      class="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-inverse-surface/85 px-2.5 py-1 text-label-sm uppercase text-inverse-on-surface backdrop-blur-md"
+    >
+      <span class="size-1.5 rounded-full bg-secondary-fixed" aria-hidden="true"></span>
+      {{ item.badge }}
+    </span>
+    <span
+      class="absolute bottom-3 right-3 rounded-lg bg-surface-container-lowest/90 px-2 py-1 text-label-sm uppercase text-on-surface shadow-card backdrop-blur-md"
+    >
+      {{ item.status }}
+    </span>
+  </div>
+
+  <div class="flex flex-1 flex-col gap-3 p-4 sm:p-5">
+    <div class="flex items-baseline justify-between gap-3">
+      <h3 [id]="'project-' + item.id" class="text-title font-bold text-on-surface">
+        {{ item.name }}
+      </h3>
+      <span class="font-mono text-label-sm text-on-surface-variant">{{ item.year }}</span>
+    </div>
+
+    <p class="text-body-sm text-on-surface-variant">{{ item.summary }}</p>
+
+    <ul class="flex flex-wrap gap-1.5">
+      @for (tag of item.tags; track tag) {
+        <li class="rounded-lg bg-surface-container px-2 py-1 text-label-sm text-on-surface">
+          {{ tag }}
+        </li>
+      }
+    </ul>
+
+    <div class="mt-auto flex items-center justify-between gap-3 pt-2">
+      <a
+        [href]="item.demoUrl"
+        class="inline-flex min-h-11 items-center gap-1.5 font-mono text-code font-semibold text-primary transition-colors hover:text-primary-container hover:underline"
+      >
+        Launch demo
+        <span class="sr-only">for {{ item.name }}</span>
+        <app-icon name="arrow-up-right" class="text-[16px]" />
+      </a>
+      <a
+        [href]="item.sourceUrl"
+        class="inline-flex min-h-11 items-center gap-1.5 font-mono text-code text-on-surface-variant transition-colors hover:text-on-surface hover:underline"
+      >
+        <app-icon name="folder" class="text-[16px]" />
+        Source
+        <span class="sr-only">for {{ item.name }}</span>
+      </a>
+    </div>
+  </div>
+</article>
