@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Icon, IconName } from '../../../shared/icon/icon';
 
-/** Small heading row shared by the bento sections: icon + title + trailing meta. */
+/** Petite ligne de titre partagée par les sections du bento : icône + titre + méta à droite. */
 @Component({
   selector: 'app-section-heading',
   changeDetection: ChangeDetectionStrategy.OnPush,

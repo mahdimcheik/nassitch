@@ -2,9 +2,9 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { Icon } from '../../../shared/icon/icon';
 
 /**
- * Playground card. The waves are two static paths drifting on `transform`
- * (compositor-only, and stopped by the global reduced-motion rule) rather than
- * per-frame path morphing.
+ * Carte bac à sable. Les vagues sont deux tracés statiques qui dérivent via
+ * `transform` (traité par le compositeur, et stoppé par la règle globale de
+ * mouvement réduit) plutôt qu'une déformation de tracé image par image.
  */
 @Component({
   selector: 'app-lab-card',

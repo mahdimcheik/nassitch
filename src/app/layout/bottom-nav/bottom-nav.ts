@@ -3,7 +3,7 @@ import { NAV_ITEMS } from '../../core/portfolio';
 import { SectionSpy } from '../../core/section-spy';
 import { Icon } from '../../shared/icon/icon';
 
-/** Thumb-reach section switcher. Replaced by the header navigation from `md` up. */
+/** Sélecteur de section à portée de pouce. Remplacé par la navigation de l'en-tête à partir de `md`. */
 @Component({
   selector: 'app-bottom-nav',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -18,11 +18,13 @@ import { Icon } from '../../../shared/icon/icon';
           class="flex items-center gap-2 text-label uppercase text-on-surface-variant"
         >
           <app-icon name="commit" class="text-[18px] text-secondary" />
-          Live micro commit stream
+          Commits en direct
         </h2>
-        <span class="flex items-center gap-1.5 text-label-sm uppercase text-secondary">
+        <span
+          class="flex shrink-0 items-center gap-1.5 whitespace-nowrap text-label-sm uppercase text-secondary"
+        >
           <span class="size-1.5 rounded-full bg-secondary" aria-hidden="true"></span>
-          Active today
+          Actif aujourd’hui
         </span>
       </div>
 

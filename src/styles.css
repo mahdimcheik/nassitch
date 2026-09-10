@@ -1,8 +1,9 @@
 @import 'tailwindcss';
 
 /* ---------------------------------------------------------------------------
-   Design tokens (Material 3 derived) — single source of truth for the site.
-   Every color/type/elevation decision lives here; components only use classes.
+   Jetons de design (dérivés de Material 3) — source unique de vérité du site.
+   Chaque décision de couleur, de typo ou d'élévation vit ici ; les composants
+   ne manipulent que des classes.
 --------------------------------------------------------------------------- */
 @theme {
   --font-sans:
@@ -10,7 +11,7 @@
     Arial, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  /* Primary — indigo */
+  /* Primaire — indigo */
   --color-primary: #4648d4;
   --color-on-primary: #ffffff;
   --color-primary-container: #6063ee;
@@ -20,7 +21,7 @@
   --color-on-primary-fixed: #07006c;
   --color-on-primary-fixed-variant: #2f2ebe;
 
-  /* Secondary — mint */
+  /* Secondaire — menthe */
   --color-secondary: #006c49;
   --color-on-secondary: #ffffff;
   --color-secondary-container: #6cf8bb;
@@ -30,7 +31,7 @@
   --color-on-secondary-fixed: #002113;
   --color-on-secondary-fixed-variant: #005236;
 
-  /* Tertiary — crimson */
+  /* Tertiaire — carmin */
   --color-tertiary: #b90538;
   --color-on-tertiary: #ffffff;
   --color-tertiary-container: #dc2c4f;
@@ -40,7 +41,7 @@
   --color-on-tertiary-fixed: #40000d;
   --color-on-tertiary-fixed-variant: #92002a;
 
-  /* Neutral surfaces */
+  /* Surfaces neutres */
   --color-background: #faf8ff;
   --color-on-background: #131b2e;
   --color-surface: #faf8ff;
@@ -60,13 +61,13 @@
   --color-outline: #767586;
   --color-outline-variant: #c7c4d7;
 
-  /* Status */
+  /* États */
   --color-error: #ba1a1a;
   --color-on-error: #ffffff;
   --color-error-container: #ffdad6;
   --color-on-error-container: #93000a;
 
-  /* Type scale — fluid where it earns it */
+  /* Échelle typographique — fluide là où c'est utile */
   --text-display: clamp(2.25rem, 1.62rem + 2.7vw, 3.5rem);
   --text-display--line-height: 1.1;
   --text-display--letter-spacing: -0.03em;
@@ -111,12 +112,12 @@
   --text-label-sm--letter-spacing: 0.06em;
   --text-label-sm--font-weight: 600;
 
-  /* Elevation — soft, tinted with the neutral hue rather than pure black */
+  /* Élévation — douce, teintée de la nuance neutre plutôt que du noir pur */
   --shadow-card: 0 1px 2px rgba(19, 27, 46, 0.06), 0 1px 3px rgba(19, 27, 46, 0.04);
   --shadow-raised: 0 4px 16px rgba(19, 27, 46, 0.08), 0 1px 3px rgba(19, 27, 46, 0.04);
   --shadow-bar: 0 4px 24px rgba(19, 27, 46, 0.08);
 
-  /* Motion */
+  /* Mouvement */
   --animate-drift-slow: drift 14s linear infinite;
   --animate-drift-fast: drift 9s linear infinite;
 }
@@ -133,12 +134,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* Keep anchored sections clear of the sticky header. */
+    /* Dégage les sections ancrées de l'en-tête collant. */
     scroll-padding-top: 5.5rem;
     -webkit-text-size-adjust: 100%;
   }
 
-  /* One focus treatment for the whole site, never removed — only restyled. */
+  /* Un seul traitement du focus pour tout le site, jamais supprimé — seulement restylé. */
   :focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;

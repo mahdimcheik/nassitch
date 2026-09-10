@@ -10,7 +10,7 @@ import { BrandMark } from '../../shared/brand-mark/brand-mark';
   imports: [BrandMark, AvailabilityPill],
   templateUrl: './site-header.html',
   host: {
-    // The component host is the page banner landmark.
+    // L'hôte du composant est le repère « banner » de la page.
     role: 'banner',
     class:
       'fixed inset-x-0 top-0 z-50 border-b border-outline-variant/40 bg-surface/85 backdrop-blur-xl',

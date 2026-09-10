@@ -26,13 +26,14 @@ import { Icon } from '../../../shared/icon/icon';
             class="size-2 animate-ping rounded-full bg-secondary-fixed"
             aria-hidden="true"
           ></span>
-          Q3 / Q4 availability
+          Disponibilité T3 / T4
         </span>
         <h3 id="availability-title" class="mt-1 text-title font-bold">
-          Open to senior roles &amp; select freelance
+          Ouvert aux postes senior et à quelques missions freelance
         </h3>
         <p class="text-body-sm text-on-primary/80">
-          Looking for full-time frontend architecture or zero-to-one design engineering contracts.
+          À la recherche d'un poste d'architecte frontend à temps plein ou de missions d'ingénierie
+          produit, de l'idée au lancement.
         </p>
       </div>
 
@@ -43,7 +44,7 @@ import { Icon } from '../../../shared/icon/icon';
                  text-label font-bold text-primary shadow-card transition-transform active:scale-[0.98]"
         >
           <app-icon name="calendar" class="text-[16px]" />
-          Book an intro chat (15 min)
+          Réserver un premier échange (15 min)
         </a>
       </div>
     </section>

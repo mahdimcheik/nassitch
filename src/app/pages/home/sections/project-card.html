@@ -4,7 +4,7 @@
   class="group flex h-full flex-col overflow-hidden rounded-2xl bg-surface-container-lowest shadow-card"
   [attr.aria-labelledby]="'project-' + item.id"
 >
-  <!-- Fixed aspect box: reserves space before the image loads, so nothing shifts. -->
+  <!-- Ratio fixe : réserve la place avant le chargement de l'image, donc rien ne saute. -->
   <div class="relative aspect-[5/3] w-full overflow-hidden bg-surface-container-high">
     <img
       [ngSrc]="item.image"
@@ -49,8 +49,8 @@
         [href]="item.demoUrl"
         class="inline-flex min-h-11 items-center gap-1.5 font-mono text-code font-semibold text-primary transition-colors hover:text-primary-container hover:underline"
       >
-        Launch demo
-        <span class="sr-only">for {{ item.name }}</span>
+        Voir la démo
+        <span class="sr-only">de {{ item.name }}</span>
         <app-icon name="arrow-up-right" class="text-[16px]" />
       </a>
       <a
@@ -58,8 +58,8 @@
         class="inline-flex min-h-11 items-center gap-1.5 font-mono text-code text-on-surface-variant transition-colors hover:text-on-surface hover:underline"
       >
         <app-icon name="folder" class="text-[16px]" />
-        Source
-        <span class="sr-only">for {{ item.name }}</span>
+        Code source
+        <span class="sr-only">de {{ item.name }}</span>
       </a>
     </div>
   </div>

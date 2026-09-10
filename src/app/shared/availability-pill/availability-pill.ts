@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-/** "Open for work" status chip. The pulsing dot is decorative; the label carries the meaning. */
+/** Puce de statut « ouvert aux opportunités ». Le point clignotant est décoratif ; c'est le libellé qui porte le sens. */
 @Component({
   selector: 'app-availability-pill',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'inline-flex' },
   template: `
     <span
       class="inline-flex items-center gap-1.5 rounded-full bg-secondary-fixed px-2.5 py-1
@@ -16,7 +15,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
         ></span>
         <span class="relative inline-flex size-2 rounded-full bg-secondary"></span>
       </span>
-      Available
+      Disponible
     </span>
   `,
 })

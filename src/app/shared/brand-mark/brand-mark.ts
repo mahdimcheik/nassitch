@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
-/** Monogram used as the site logo. Decorative: the wordmark next to it names the site. */
+/** Monogramme servant de logo. Décoratif : c'est le nom à côté qui identifie le site. */
 @Component({
   selector: 'app-brand-mark',
   changeDetection: ChangeDetectionStrategy.OnPush,

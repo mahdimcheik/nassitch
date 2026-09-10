@@ -14,7 +14,7 @@ import { Icon } from '../../../shared/icon/icon';
     >
       <h3 id="obsessions-title" class="flex items-center gap-2 text-label uppercase text-primary">
         <app-icon name="lightbulb" class="text-[18px]" />
-        Current obsessions
+        Obsessions du moment
       </h3>
       <ul class="flex flex-col gap-2">
         @for (item of obsessions; track item.label) {

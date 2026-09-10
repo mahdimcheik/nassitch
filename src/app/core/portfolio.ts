@@ -1,8 +1,8 @@
 import { IconName } from '../shared/icon/icon';
 
 /**
- * Every piece of copy on the home page lives here. Swap these values for your
- * own details — no component needs to change.
+ * Tout le contenu rédactionnel de la page d'accueil vit ici. Remplacez ces
+ * valeurs par les vôtres — aucun composant n'a besoin d'être modifié.
  */
 
 export interface Profile {
@@ -20,7 +20,7 @@ export interface Profile {
 export interface Metric {
   readonly value: string;
   readonly label: string;
-  /** Which accent role paints the number. */
+  /** Le rôle d'accent qui colore le chiffre. */
   readonly tone: 'primary' | 'secondary' | 'tertiary';
 }
 
@@ -60,18 +60,18 @@ export const PROFILE: Profile = {
   name: 'Alex Rivera',
   handle: '@alexdev',
   initials: 'AR',
-  role: 'Creative engineer',
-  greeting: "Hey, I'm Alex",
+  role: 'Ingénieur créatif',
+  greeting: "Salut, moi c'est Alex",
   summary:
-    'Building delightful web experiences with code & craft. Currently engineering fast, accessible apps and interactive creative tools.',
+    'Je conçois des expériences web soignées, entre code et artisanat. En ce moment : des applications rapides et accessibles, et des outils créatifs interactifs.',
   version: 'v2.4.0',
   available: true,
   resumeUrl: 'https://github.com',
 };
 
 export const METRICS: readonly Metric[] = [
-  { value: '4+', label: 'Years experience', tone: 'primary' },
-  { value: '32+', label: 'Shipped apps', tone: 'secondary' },
+  { value: '4+', label: "Ans d'expérience", tone: 'primary' },
+  { value: '32+', label: 'Applis livrées', tone: 'secondary' },
   { value: '99.9%', label: 'Lighthouse', tone: 'tertiary' },
 ];
 
@@ -81,40 +81,41 @@ export const PROJECTS: readonly Project[] = [
     name: 'SaaS Pulse',
     year: '2024',
     summary:
-      'Zero-bloat product telemetry and subscription analytics tailored specifically for micro-SaaS founders and indie hackers.',
+      "Télémétrie produit et analyse d'abonnements sans superflu, pensées pour les fondateurs de micro-SaaS et les indie hackers.",
     tags: ['Next.js 14', 'Tailwind CSS', 'Supabase', 'TypeScript'],
-    badge: 'Flagship',
-    status: 'v1.8.0 live',
+    badge: 'Produit phare',
+    status: 'v1.8.0 en ligne',
     image: '/media/project-saas-pulse.svg',
     imageAlt:
-      'SaaS Pulse dashboard: a revenue trend line, three metric cards and a churn breakdown on a light indigo interface.',
+      "Tableau de bord SaaS Pulse : une courbe de revenus, trois cartes de métriques et une répartition du taux d'attrition sur une interface indigo clair.",
     demoUrl: '#',
     sourceUrl: '#',
   },
 ];
 
 export const OBSESSIONS: readonly Obsession[] = [
-  { label: 'Rust + WebAssembly compilers', icon: 'bolt', tone: 'secondary' },
-  { label: 'CSS scroll-driven animations', icon: 'sparkles', tone: 'primary' },
-  { label: 'Haptic feedback on mobile web', icon: 'smartphone', tone: 'tertiary' },
+  { label: 'Compilateurs Rust + WebAssembly', icon: 'bolt', tone: 'secondary' },
+  { label: 'Animations CSS pilotées au défilement', icon: 'sparkles', tone: 'primary' },
+  { label: 'Retour haptique sur le web mobile', icon: 'smartphone', tone: 'tertiary' },
 ];
 
+// Les sujets de commit restent en anglais : ce sont les messages Git réels du dépôt.
 export const COMMITS: readonly Commit[] = [
   {
     sha: '4f8a12',
     message: 'perf: optimize canvas render loop for 120hz displays',
-    meta: '2 hours ago on main · saas-pulse',
+    meta: 'il y a 2 heures sur main · saas-pulse',
   },
   {
     sha: '9c3e50',
     message: 'feat: add fluid typography clamps & gesture triggers',
-    meta: '5 hours ago on dev · design-tokens',
+    meta: 'il y a 5 heures sur dev · design-tokens',
   },
 ];
 
 export const NAV_ITEMS: readonly NavItem[] = [
-  { label: 'Featured', icon: 'star', fragment: 'featured-work' },
-  { label: 'Projects', icon: 'grid', fragment: 'projects' },
-  { label: 'Lab', icon: 'terminal', fragment: 'lab' },
+  { label: 'À la une', icon: 'star', fragment: 'featured-work' },
+  { label: 'Projets', icon: 'grid', fragment: 'projects' },
+  { label: 'Labo', icon: 'terminal', fragment: 'lab' },
   { label: 'Contact', icon: 'at-sign', fragment: 'contact' },
 ];

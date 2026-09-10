@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 /**
- * One inline-SVG icon family for the whole site — no icon font, no emoji, no
- * network request. Icons are sized in `em` so a `text-[18px]` on the host is
- * all a caller needs.
+ * Une seule famille d'icônes SVG en ligne pour tout le site — pas de police
+ * d'icônes, pas d'emoji, aucune requête réseau. Les icônes se dimensionnent en
+ * `em` : un `text-[18px]` sur l'hôte suffit à l'appelant.
  *
- * Icons are always decorative: they are hidden from assistive tech, and the
- * control or text around them carries the accessible name.
+ * Les icônes sont toujours décoratives : elles sont masquées aux technologies
+ * d'assistance, et c'est le contrôle ou le texte alentour qui porte le nom
+ * accessible.
  */
 type IconShape = {
   readonly d: readonly string[];

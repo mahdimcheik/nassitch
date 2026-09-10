@@ -3,9 +3,12 @@ import { DestroyRef, Injectable, PLATFORM_ID, inject, signal } from '@angular/co
 import { NAV_ITEMS } from './portfolio';
 
 /**
- * Tracks which page section is currently in view so the navigation can show a
- * truthful current state. No-ops on the server and wherever IntersectionObserver
- * is unavailable, in which case navigation simply renders without a highlight.
+ * Suit la section actuellement visible pour que la navigation affiche un état
+ * courant fidèle. Ne fait rien côté serveur ni là où IntersectionObserver est
+ * indisponible : la navigation s'affiche alors simplement sans surbrillance.
+ *
+ * La valeur initiale est la première section, car la page s'ouvre en haut : la
+ * navigation rend ainsi son état courant côté serveur, sans saut à l'hydratation.
  */
 @Injectable({ providedIn: 'root' })
 export class SectionSpy {
