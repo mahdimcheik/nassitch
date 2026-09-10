@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    title: 'Alex Rivera — Ingénieur créatif',
+    title: 'Nassime Harmach — Ingénieur créatif',
     loadComponent: () => import('./pages/home/home').then((m) => m.Home),
   },
   { path: '**', redirectTo: '' },

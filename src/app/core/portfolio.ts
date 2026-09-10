@@ -57,16 +57,16 @@ export interface NavItem {
 }
 
 export const PROFILE: Profile = {
-  name: 'Alex Rivera',
-  handle: '@alexdev',
-  initials: 'AR',
+  name: 'Nassime Harmach',
+  handle: '@nassitch',
+  initials: 'NH',
   role: 'Ingénieur créatif',
-  greeting: "Salut, moi c'est Alex",
+  greeting: "Salut, moi c'est Nassime",
   summary:
     'Je conçois des expériences web soignées, entre code et artisanat. En ce moment : des applications rapides et accessibles, et des outils créatifs interactifs.',
   version: 'v2.4.0',
   available: true,
-  resumeUrl: 'https://github.com',
+  resumeUrl: 'https://github.com/nassitch',
 };
 
 export const METRICS: readonly Metric[] = [

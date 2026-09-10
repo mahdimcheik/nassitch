@@ -1,5 +1,10 @@
 # Nassitch
 
+Portfolio site of **Nassime Harmach** — <https://github.com/nassitch>.
+
+Built and deployed by Mahdi (Docker Hub `mahdimcheik`, see `.github/workflows/CD.yml`);
+all editorial content on the site belongs to Nassime.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.22.
 
 ## Development server
