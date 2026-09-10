@@ -2,8 +2,14 @@ name: CD
 
 on:
   push:
-    tags:
-      - 'v*' # se déclenche sur git tag v1.0.0, v1.0.1, etc.
+    branches:
+      - main
+      - master # branche par défaut actuelle du dépôt
+  workflow_dispatch:
+
+concurrency:
+  group: cd-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -13,10 +19,10 @@ jobs:
       - name: Checkout the branch
         uses: actions/checkout@v4
 
-      # Extrait "1.0.0" à partir du tag "v1.0.0"
+      # Version = sha court du commit déployé (ex. "a1b2c3d")
       - name: Resolve version
         id: version
-        run: echo "tag=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+        run: echo "tag=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
 
       - name: Login to docker hub
         uses: docker/login-action@v3
@@ -29,11 +35,11 @@ jobs:
         run: |
           docker build --target prod-runtime \
             --build-arg APP_VERSION=${{ steps.version.outputs.tag }} \
-            -t mahdimcheik/accompagnement-client:${{ steps.version.outputs.tag }} \
-            -t mahdimcheik/accompagnement-client:latest .
+            -t mahdimcheik/nassitch-client:${{ steps.version.outputs.tag }} \
+            -t mahdimcheik/nassitch-client:latest .
 
       - name: Push the docker image to the docker hub
-        run: docker push --all-tags mahdimcheik/accompagnement-client
+        run: docker push --all-tags mahdimcheik/nassitch-client
 
       - name: Deploy on VPS via SSH
         uses: appleboy/ssh-action@v1.0.0
@@ -44,13 +50,13 @@ jobs:
           # on passe la version au script via une variable d'env
           envs: IMAGE_TAG
           script: |
-            cd ~/accompagnement/front-end
+            cd ~/nassitch/front-end
             # met à jour UNIQUEMENT la ligne IMAGE_TAG, garde le reste du .env
             touch .env
             grep -v '^IMAGE_TAG=' .env > .env.tmp || true
             echo "IMAGE_TAG=${IMAGE_TAG}" >> .env.tmp
             mv .env.tmp .env
-            docker pull mahdimcheik/accompagnement-client:${IMAGE_TAG}
+            docker pull mahdimcheik/nassitch-client:${IMAGE_TAG}
             docker compose up -d --force-recreate
         env:
           IMAGE_TAG: ${{ steps.version.outputs.tag }}

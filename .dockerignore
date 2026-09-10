@@ -1,0 +1,14 @@
+.git
+.github
+.angular
+.vscode
+.claude
+node_modules
+dist
+out-tsc
+coverage
+npm-debug.log
+yarn-error.log
+*.md
+.DS_Store
+Thumbs.db
